@@ -11,4 +11,4 @@ $ docker build . -t web
 $ docker-compose up -d --build
 ```
 
-Abra su navegador en http: // localhost: 5004 para ver la aplicación o en http: // localhost: 9181 para ver el panel de control de RQ.
+Abra su navegador en http://localhost:5004 para ver la aplicación o en http://localhost:9181 para ver el panel de control de RQ.
