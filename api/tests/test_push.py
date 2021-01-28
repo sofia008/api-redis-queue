@@ -13,5 +13,5 @@ class TestPushBlueprint(BaseTestCase):
         self.assertEqual(response.status_code, 200)
 
 
-if __name__ == "__push__":
-    unittest.push()
+if __name__ == "__main__":
+    unittest.main()

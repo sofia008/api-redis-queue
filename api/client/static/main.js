@@ -6,7 +6,7 @@ $( document ).ready(() => {
 
 $('.btn').on('click', function() {
   $.ajax({
-    url: '/api/queue/push',
+    url: '/tasks',
     data: { type: $(this).data('type') },
     method: 'POST'
   })
@@ -20,7 +20,7 @@ $('.btn').on('click', function() {
 
 function getStatus(taskID) {
   $.ajax({
-    url: `/api/queue/push/${taskID}`,
+    url: `/tasks/${taskID}`,
     method: 'GET'
   })
   .done((res) => {

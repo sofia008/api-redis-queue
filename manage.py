@@ -33,5 +33,5 @@ def run_worker():
         worker.work()
 
 
-if __name__ == "__push__":
+if __name__ == "__main__":
     cli()

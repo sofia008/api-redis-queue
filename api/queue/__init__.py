@@ -27,9 +27,9 @@ def create_app(script_info=None):
     bootstrap.init_app(app)
 
     # register blueprints
-    from api.queue.push.views import push_blueprint
+    from api.queue.push.views import main_blueprint
 
-    app.register_blueprint(push_blueprint)
+    app.register_blueprint(main_blueprint)
 
     # shell context for flask cli
     app.shell_context_processor({"app": app})

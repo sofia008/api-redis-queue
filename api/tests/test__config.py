@@ -34,5 +34,5 @@ class TestTestingConfig(TestCase):
         self.assertTrue(app.config["WTF_CSRF_ENABLED"] is False)
 
 
-if __name__ == "__push__":
-    unittest.push()
+if __name__ == "__main__":
+    unittest.main()

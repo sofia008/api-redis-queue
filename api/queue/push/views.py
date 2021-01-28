@@ -7,15 +7,15 @@ from flask import render_template, Blueprint, jsonify, request, current_app
 
 from api.queue.push.tasks import create_task
 
-push_blueprint = Blueprint("push", __name__,)
+main_blueprint = Blueprint("main", __name__,)
 
 
-@push_blueprint.route("/", methods=["GET"])
+@main_blueprint.route("/", methods=["GET"])
 def home():
-    return render_template("push/home.html")
+    return render_template("main/home.html")
 
 
-@push_blueprint.route("/tasks", methods=["POST"])
+@main_blueprint.route("/tasks", methods=["POST"])
 def run_task():
     task_type = request.form["type"]
     with Connection(redis.from_url(current_app.config["REDIS_URL"])):
@@ -30,7 +30,7 @@ def run_task():
     return jsonify(response_object), 202
 
 
-@push_blueprint.route("/tasks/<task_id>", methods=["GET"])
+@main_blueprint.route("/tasks/<task_id>", methods=["GET"])
 def get_status(task_id):
     with Connection(redis.from_url(current_app.config["REDIS_URL"])):
         q = Queue()
